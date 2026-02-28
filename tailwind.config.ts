@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        chivo: ['Chivo', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +60,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "blue-deep": "hsl(var(--blue-deep))",
+        "blue-mid": "hsl(var(--blue-mid))",
+        "blue-light": "hsl(var(--blue-light))",
+        "blue-tint": "hsl(var(--blue-tint))",
+        "blue-pale": "hsl(var(--blue-pale))",
+        "wems-yellow": "hsl(var(--yellow))",
+        "wems-black": "hsl(var(--wems-black))",
+        "wems-white": "hsl(var(--wems-white))",
+        "grey-100": "hsl(var(--grey-100))",
+        "grey-200": "hsl(var(--grey-200))",
+        "grey-400": "hsl(var(--grey-400))",
       },
       borderRadius: {
         lg: "var(--radius)",
