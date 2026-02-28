@@ -1,136 +1,174 @@
+import { useState } from 'react';
 import { useCountUp } from '@/hooks/useCountUp';
 import heroFactory from '@/assets/hero-factory.jpg';
 import heroFloor from '@/assets/hero-manufacturing-floor.jpg';
+import productDisplay from '@/assets/product-smart-display.jpg';
+import productRobotics from '@/assets/product-robotics.jpg';
+
+const categories = [
+  { icon: '📺', name: 'Smart Displays', subtitle: 'TV · IFPD · Digital Signage', tag: 'Core Business' },
+  { icon: '🤖', name: 'AI Robotics', subtitle: 'Industrial · Medical · Cleaning', tag: 'Future Tech' },
+  { icon: '🔊', name: 'Smart Audio', subtitle: 'Consumer & Commercial Systems', tag: 'Consumer' },
+  { icon: '⚡', name: 'New Energy Systems', subtitle: 'EV · Charging Infra · Battery', tag: 'Upcoming' },
+];
+
+const certs = ['ISO 9001', 'ISO 14001', 'ISO 45001', 'ISO 50001', 'BIS', 'BEE'];
 
 export default function HeroSection() {
   const revenue = useCountUp(66.73, 1800, '₹', 'Cr');
   const growth = useCountUp(41.7, 1800, '', '×');
   const footprint = useCountUp(365, 1800, '', 'K');
+  const [hoveredRow, setHoveredRow] = useState<number | null>(null);
 
   return (
-    <section className="min-h-screen pt-[68px] bg-blue-deep">
-      <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-[1fr_auto] gap-[3px] h-[calc(100vh-68px)] p-[3px]">
-        {/* Cell A — Hero Main */}
-        <div className="relative overflow-hidden md:row-span-1 group cursor-default">
-          <img
-            src={heroFactory}
-            alt="World EMS manufacturing facility"
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-[1.04]"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--blue-deep))] via-[hsl(var(--blue-deep)/0.6)] to-transparent" />
-          <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-10">
+    <section className="min-h-screen pt-[68px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-[calc(100vh-68px)]">
+        {/* LEFT COLUMN — White */}
+        <div className="bg-card flex flex-col justify-between p-8 md:p-12 lg:p-14 overflow-y-auto">
+          <div>
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm rounded-full px-4 py-1.5 w-fit mb-6">
+            <div className="inline-flex items-center gap-2 bg-accent/15 rounded-full px-4 py-1.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-accent pulse-dot" />
-              <span className="eyebrow text-accent text-[11px]">🇮🇳 India's Next-Gen EMS Partner</span>
+              <span className="eyebrow text-blue-deep text-[11px]">🇮🇳 India's Next-Gen EMS Partner</span>
             </div>
 
-            <h1 className="font-chivo font-black text-3xl md:text-[52px] leading-[1.08] tracking-[-1.5px] text-primary-foreground mb-2">
+            {/* Headline */}
+            <h1 className="font-chivo font-black text-[36px] md:text-[48px] lg:text-[52px] leading-[1.1] tracking-[-1.5px] text-blue-deep mb-6">
               Your Partner in Next-Gen
-              <span className="block"><span className="yellow-rule inline-block w-16 mr-3 align-middle" />Electronics</span>
-              Brand Building Journey.
+              <span className="block mt-1">
+                <span className="yellow-rule inline-block w-16 mr-3 align-middle" />
+                Electronics
+              </span>
+              <span className="block font-light italic text-blue-mid mt-1">
+                Brand Building Journey.
+              </span>
             </h1>
 
-            <p className="font-chivo font-light text-sm md:text-base text-primary-foreground/60 max-w-lg mt-4 mb-6">
-              From Smart Displays to AI Robots — design-led manufacturing for the world's boldest electronics brands, made in India.
+            {/* Body */}
+            <p className="font-chivo font-light text-[15px] leading-[1.75] text-grey-400 max-w-md mb-8">
+              From Smart Displays to AI Robots — design-led OEM/ODM manufacturing for the world's boldest electronics brands, built in India.
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-3 mb-10">
               <a
                 href="#capabilities"
-                className="bg-accent text-accent-foreground font-chivo font-bold text-sm px-6 py-3 rounded-lg hover:-translate-y-0.5 hover:shadow-[0_4px_24px_hsl(var(--yellow)/0.4)] transition-all"
+                className="bg-accent text-blue-deep font-chivo font-bold text-sm px-6 py-3 rounded-lg hover:-translate-y-0.5 hover:shadow-[0_4px_24px_hsl(var(--yellow)/0.4)] transition-all"
               >
                 Explore Capabilities
               </a>
               <a
                 href="#products"
-                className="border border-primary-foreground/30 text-primary-foreground font-chivo font-bold text-sm px-6 py-3 rounded-lg hover:bg-primary-foreground/10 transition-all"
+                className="border border-grey-200 text-blue-deep font-chivo font-bold text-sm px-6 py-3 rounded-lg hover:border-blue-mid hover:text-blue-mid transition-all"
               >
                 View Product Portfolio
               </a>
             </div>
           </div>
-        </div>
 
-        {/* Cell B — Revenue */}
-        <div className="relative bg-accent overflow-hidden p-6 flex flex-col justify-center">
-          <div className="absolute top-4 right-4 w-20 h-20 rounded-full border-2 border-accent-foreground/20" />
-          <div className="absolute top-4 right-4 text-accent-foreground/40 text-xl">↗</div>
-          <div ref={revenue.ref}>
-            <span className="font-chivo font-black text-4xl md:text-[52px] text-accent-foreground tracking-tight">
-              {revenue.display}
-            </span>
-          </div>
-          <span className="font-chivo font-light text-sm text-accent-foreground/60 mt-2">Revenue FY 2024–25</span>
-        </div>
-
-        {/* Cell C — Growth */}
-        <div
-          className="relative overflow-hidden p-6 flex flex-col justify-center"
-          style={{ backgroundColor: 'hsl(var(--blue-deep))' }}
-        >
-          <img
-            src={heroFactory}
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover opacity-20"
-          />
-          <div className="relative z-10" ref={growth.ref}>
-            <span className="font-chivo font-black text-4xl md:text-[52px] text-primary-foreground tracking-tight">
-              {growth.display}
-            </span>
-          </div>
-          <span className="relative z-10 font-chivo font-light text-sm text-primary-foreground/45 mt-2">
-            Revenue growth year over year
-          </span>
-        </div>
-
-        {/* Cell D — Locations */}
-        <div className="relative overflow-hidden group">
-          <img
-            src={heroFloor}
-            alt="Manufacturing floor"
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--blue-deep))] to-transparent" />
-          <div className="relative z-10 h-full flex flex-col justify-end p-6">
-            <span className="font-chivo font-bold text-sm text-primary-foreground">
-              Ahmedabad · Greater Noida · Expanding
-            </span>
-            <span className="font-chivo font-light text-xs text-primary-foreground/45 mt-1">
-              3 world-class manufacturing locations
-            </span>
-          </div>
-        </div>
-
-        {/* Cell E — Footprint */}
-        <div className="bg-card p-6 flex flex-col justify-center">
-          <div ref={footprint.ref}>
-            <span className="font-chivo font-black text-4xl md:text-[52px] text-blue-mid tracking-tight">
-              {footprint.display}
-            </span>
-          </div>
-          <span className="font-chivo font-light text-sm text-grey-400 mt-2">
-            Sq. ft. of manufacturing footprint
-          </span>
-        </div>
-
-        {/* Cell F — Certifications */}
-        <div className="bg-blue-pale p-6 flex flex-col justify-center">
-          <div className="flex flex-wrap gap-2 mb-3">
-            {['ISO 9001', 'ISO 14001', 'ISO 45001', 'ISO 50001', 'BIS', 'BEE'].map((cert) => (
-              <span
-                key={cert}
-                className="bg-card text-blue-deep font-chivo font-bold text-[10px] px-3 py-1.5 rounded-full border border-grey-200"
+          {/* Product categories */}
+          <div className="border-t border-grey-200 pt-6 space-y-1">
+            {categories.map((cat, i) => (
+              <div
+                key={cat.name}
+                className="flex items-center gap-4 py-3 px-2 rounded-lg cursor-pointer transition-all duration-300 group"
+                style={{ transform: hoveredRow === i ? 'translateX(6px)' : 'translateX(0)' }}
+                onMouseEnter={() => setHoveredRow(i)}
+                onMouseLeave={() => setHoveredRow(null)}
               >
-                {cert}
+                <div className="w-9 h-9 rounded-lg bg-blue-pale flex items-center justify-center text-base flex-shrink-0">
+                  {cat.icon}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <span className="font-chivo font-bold text-sm text-blue-deep block">{cat.name}</span>
+                  <span className="font-chivo font-light text-xs text-grey-400">{cat.subtitle}</span>
+                </div>
+                <span className="font-chivo font-bold text-[10px] px-3 py-1 rounded-full bg-blue-tint text-blue-mid flex-shrink-0">
+                  {cat.tag}
+                </span>
+                <span
+                  className="text-accent font-bold text-sm transition-all duration-300 flex-shrink-0"
+                  style={{
+                    opacity: hoveredRow === i ? 1 : 0,
+                    transform: hoveredRow === i ? 'translateX(0)' : 'translateX(-8px)',
+                  }}
+                >
+                  →
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* RIGHT COLUMN — Dark mosaic */}
+        <div className="relative bg-blue-deep hidden lg:block">
+          {/* 2×2 mosaic */}
+          <div className="h-full grid grid-rows-[60%_40%] grid-cols-2 gap-[3px] p-[3px]">
+            {/* Top — spans both cols */}
+            <div className="col-span-2 overflow-hidden group">
+              <img
+                src={heroFactory}
+                alt="World EMS manufacturing facility"
+                className="w-full h-full object-cover brightness-[0.82] group-hover:brightness-100 group-hover:scale-[1.07] transition-all duration-[600ms]"
+                loading="eager"
+              />
+            </div>
+            {/* Bottom-left */}
+            <div className="overflow-hidden group">
+              <img
+                src={productRobotics}
+                alt="Industrial robot arm"
+                className="w-full h-full object-cover brightness-[0.82] group-hover:brightness-100 group-hover:scale-[1.07] transition-all duration-[600ms]"
+                loading="eager"
+              />
+            </div>
+            {/* Bottom-right */}
+            <div className="overflow-hidden group">
+              <img
+                src={productDisplay}
+                alt="Smart TV display product"
+                className="w-full h-full object-cover brightness-[0.82] group-hover:brightness-100 group-hover:scale-[1.07] transition-all duration-[600ms]"
+                loading="eager"
+              />
+            </div>
+          </div>
+
+          {/* Floating stat pills — bottom-left */}
+          <div className="absolute bottom-7 left-7 flex gap-1.5 z-20">
+            {/* Pill 1 — Revenue */}
+            <div ref={revenue.ref} className="bg-accent rounded-xl px-4 py-3 min-w-[140px]">
+              <span className="font-chivo font-black text-[22px] md:text-[26px] text-blue-deep block leading-tight">
+                {revenue.display}
+              </span>
+              <span className="font-chivo font-light text-[11px] text-blue-deep/60">Revenue FY 2024–25</span>
+            </div>
+            {/* Pill 2 — Growth */}
+            <div ref={growth.ref} className="bg-[rgba(13,31,58,0.82)] backdrop-blur-[12px] border border-white/10 rounded-xl px-4 py-3 min-w-[120px]">
+              <span className="font-chivo font-black text-[22px] md:text-[26px] text-white block leading-tight">
+                {growth.display}
+              </span>
+              <span className="font-chivo font-light text-[11px] text-white/60">Revenue growth YoY</span>
+            </div>
+            {/* Pill 3 — Footprint */}
+            <div ref={footprint.ref} className="bg-[rgba(13,31,58,0.82)] backdrop-blur-[12px] border border-white/10 rounded-xl px-4 py-3 min-w-[120px]">
+              <span className="font-chivo font-black text-[22px] md:text-[26px] text-white block leading-tight">
+                {footprint.display}
+              </span>
+              <span className="font-chivo font-light text-[11px] text-white/60">Sq. ft. footprint</span>
+            </div>
+          </div>
+
+          {/* Certification badges — bottom-right */}
+          <div className="absolute bottom-7 right-7 flex flex-wrap gap-1.5 justify-end max-w-[240px] z-20">
+            {certs.map((c) => (
+              <span
+                key={c}
+                className="font-chivo font-bold text-[10px] text-white px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-[8px]"
+              >
+                {c}
               </span>
             ))}
           </div>
-          <span className="font-chivo font-light text-xs text-grey-400">
-            Fully certified & compliant
-          </span>
         </div>
       </div>
     </section>
