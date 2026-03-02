@@ -1,10 +1,24 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const navLinks = ['Products', 'Manufacturing', 'Capabilities', 'About', 'Contact'];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (link: string) => {
+    if (link === 'Products') {
+      navigate('/products');
+    } else if (location.pathname !== '/') {
+      navigate(`/#${link.toLowerCase()}`);
+    } else {
+      document.getElementById(link.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMobileOpen(false);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -34,13 +48,13 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link}
-              href={`#${link.toLowerCase()}`}
-              className="nav-link font-chivo font-normal text-sm text-grey-400 hover:text-blue-deep transition-colors pb-1"
+              onClick={() => handleNavClick(link)}
+              className="nav-link font-chivo font-normal text-sm text-grey-400 hover:text-blue-deep transition-colors pb-1 bg-transparent border-none cursor-pointer"
             >
               {link}
-            </a>
+            </button>
           ))}
         </div>
 
@@ -67,14 +81,13 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-card border-t border-border px-6 py-4 space-y-3">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link}
-              href={`#${link.toLowerCase()}`}
-              className="block font-chivo text-sm text-grey-400 hover:text-blue-deep"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => handleNavClick(link)}
+              className="block font-chivo text-sm text-grey-400 hover:text-blue-deep bg-transparent border-none cursor-pointer text-left w-full"
             >
               {link}
-            </a>
+            </button>
           ))}
           <a
             href="#contact"
