@@ -9,6 +9,7 @@ import LeadershipSection from '@/components/LeadershipSection';
 import CertificationsSection from '@/components/CertificationsSection';
 import CTASection from '@/components/CTASection';
 import FooterSection from '@/components/FooterSection';
+import StatsBar from '@/components/StatsBar';
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <MarqueeStrip />
+      <StatsBar />
       <ProductsSection />
       <ManufacturingSection />
       <StrengthsSection />

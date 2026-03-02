@@ -1,16 +1,33 @@
-const productLinks = ['Smart Displays', 'AI Robotics', 'Smart Audio', 'New Energy', 'Digital Signage'];
-const companyLinks = ['About', 'Leadership', 'Our Journey', 'Certifications', 'Careers'];
-const mfgLinks = ['Ahmedabad Facility', 'Greater Noida', 'ODM Capabilities', 'R&D Centre', 'Shenzhen Sourcing'];
+const productLinks = [
+  { label: 'Smart Displays', href: '/#products' },
+  { label: 'AI Robotics', href: '/#products' },
+  { label: 'Smart Audio', href: '/#products' },
+  { label: 'New Energy', href: '/#products' },
+  { label: 'Digital Signage', href: '/#products' }
+];
+const companyLinks = [
+  { label: 'About', href: '/#about' },
+  { label: 'Leadership', href: '/#leadership' },
+  { label: 'Our Journey', href: '/#timeline' },
+  { label: 'Certifications', href: '/#certifications' },
+  { label: 'Infrastructures', href: '/#infrastructure' },
+  { label: 'Contact', href: '/#contact' }
+];
+const mfgLinks = [
+  { label: 'Ahmedabad Facility', href: '/#infrastructure' },
+  { label: 'Greater Noida', href: '/#infrastructure' },
+  { label: 'Shenzhen Sourcing', href: '/#infrastructure' }
+];
 
-function LinkColumn({ title, links }: { title: string; links: string[] }) {
+function LinkColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
     <div>
       <h4 className="font-chivo font-bold text-sm text-primary-foreground/40 uppercase tracking-wider mb-4">{title}</h4>
       <ul className="space-y-2.5">
         {links.map((l) => (
-          <li key={l}>
-            <a href="#" className="font-chivo font-light text-sm text-primary-foreground/50 hover:text-accent transition-colors">
-              {l}
+          <li key={l.label}>
+            <a href={l.href} className="font-chivo font-light text-sm text-primary-foreground/50 hover:text-accent transition-colors">
+              {l.label}
             </a>
           </li>
         ))}

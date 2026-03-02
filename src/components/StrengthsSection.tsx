@@ -37,7 +37,7 @@ export default function StrengthsSection() {
   const ref = useScrollReveal();
 
   return (
-    <section id="capabilities" className="bg-grey-100 py-20 md:py-28" ref={ref}>
+    <section id="about" className="bg-grey-100 py-20 md:py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
         <span className="reveal eyebrow text-blue-mid mb-3 block">Why World EMS</span>
         <h2 className="reveal font-chivo font-black text-3xl md:text-5xl text-blue-deep tracking-tight mb-12">

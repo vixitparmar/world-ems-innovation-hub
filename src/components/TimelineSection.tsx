@@ -1,8 +1,8 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const milestones = [
-  { year: 'Founding', title: 'ODM of LED TVs', desc: 'Own design manufacturing begins with LED TV production' },
   { year: 'Acquisition', title: 'Acquired Abaj Techpark', desc: 'Expands manufacturing base and production capacity' },
+  { year: 'Founding', title: 'ODM of LED TVs', desc: 'Own design manufacturing begins with LED TV production' },
   { year: 'Robotics', title: 'JDM with Kody', desc: 'Joint Design Manufacturing partnership in robotics' },
   { year: 'Expansion', title: 'Signed BTA with METEC', desc: 'Digital Signage & IFPD categories added to portfolio' },
   { year: 'Partnerships', title: 'Hyundai + Schneider Consumer', desc: '15+ regional brands onboarded, strategic partnerships' },
@@ -13,7 +13,7 @@ export default function TimelineSection() {
   const ref = useScrollReveal();
 
   return (
-    <section id="about" className="bg-card py-20 md:py-28 overflow-hidden" ref={ref}>
+    <section id="timeline" className="bg-card py-20 md:py-28 overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
         <span className="reveal eyebrow text-blue-mid mb-3 block">Our Journey</span>
         <h2 className="reveal font-chivo font-black text-3xl md:text-5xl text-blue-deep tracking-tight mb-16">

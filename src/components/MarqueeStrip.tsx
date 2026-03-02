@@ -1,12 +1,12 @@
 const items = [
   'Hyundai', 'Schneider Electric', 'Smart Displays', 'AI Robotics',
   'METEC Partnership', 'ODM Manufacturing', 'ISO Certified',
-  'Make in India', 'PLI Scheme', 'New Energy Systems',
+  'Make in India', 'PLI Scheme', 'Next Gen Electronics Systems',
 ];
 
 export default function MarqueeStrip() {
   const content = items.map((item, i) => (
-    <span key={i} className="flex items-center gap-6 whitespace-nowrap">
+    <span key={i} className="flex items-center gap-6 whitespace-nowrap p-6">
       <span className="font-chivo font-bold uppercase text-xs tracking-[2px] text-primary-foreground/35">
         {item}
       </span>

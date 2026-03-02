@@ -35,7 +35,7 @@ export default function CertificationsSection() {
   const ref = useScrollReveal();
 
   return (
-    <section className="bg-grey-100 py-20 md:py-28" ref={ref}>
+    <section id="certifications" className="bg-grey-100 py-20 md:py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
         <span className="reveal eyebrow text-blue-mid mb-3 block">Accreditations</span>
         <h2 className="reveal font-chivo font-black text-3xl md:text-5xl text-blue-deep tracking-tight mb-12">

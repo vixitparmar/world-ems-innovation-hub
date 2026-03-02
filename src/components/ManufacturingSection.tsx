@@ -1,26 +1,23 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useCountUp } from '@/hooks/useCountUp';
-import facilityAhmedabad from '@/assets/facility-ahmedabad.jpg';
-import facilityNoida from '@/assets/facility-noida.jpg';
-import facilityExpansion from '@/assets/facility-expansion.jpg';
 
 const facilities = [
   {
-    image: facilityAhmedabad,
+    image: './WEMS_Site_Images/Factory_Images/wems.png',
     tag: 'Smart Display Hub',
     area: '45K sq. ft.',
     city: 'Ahmedabad',
     desc: 'Climate-controlled, 15K TV units/month peak capacity',
   },
   {
-    image: facilityNoida,
+    image: './WEMS_Site_Images/Factory_Images/factory_noida.png',
     tag: 'Smart Audio Centre',
     area: '120K sq. ft.',
     city: 'Greater Noida',
     desc: 'ESD-protected environment for precision manufacturing',
   },
   {
-    image: facilityExpansion,
+    image: './WEMS_Site_Images/Factory_Images/expansion.png',
     tag: 'Under Construction',
     area: '200K sq. ft.',
     city: 'Expansion Site',
@@ -43,8 +40,8 @@ export default function ManufacturingSection() {
   const ref = useScrollReveal();
 
   return (
-    <section id="manufacturing" className="bg-blue-deep py-20 md:py-28" ref={ref}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="infrastructure" className="bg-blue-deep" ref={ref}>
+      <div className="max-w-7xl mx-auto px-6 py-10">
         <span className="reveal eyebrow text-accent mb-3 block">Our Facilities</span>
         <h2 className="reveal font-chivo font-black text-3xl md:text-5xl text-primary-foreground tracking-tight mb-12">
           Manufacturing at India's finest scale.
@@ -66,11 +63,10 @@ export default function ManufacturingSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--blue-deep)/0.9)] via-transparent to-transparent" />
               <div className="relative z-10 h-full flex flex-col justify-end p-6">
                 <span
-                  className={`font-chivo font-bold text-[10px] uppercase tracking-[2px] px-3 py-1 rounded-full w-fit mb-3 ${
-                    f.isExpanding
-                      ? 'bg-accent text-accent-foreground'
-                      : 'bg-primary-foreground/10 text-primary-foreground/60'
-                  }`}
+                  className={`font-chivo font-bold text-[10px] uppercase tracking-[2px] px-3 py-1 rounded-full w-fit mb-3 ${f.isExpanding
+                    ? 'bg-accent text-accent-foreground'
+                    : 'bg-primary-foreground/10 text-primary-foreground/60'
+                    }`}
                 >
                   {f.tag}
                 </span>
@@ -83,12 +79,12 @@ export default function ManufacturingSection() {
         </div>
 
         {/* Stats Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-primary-foreground/10 pt-10">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-primary-foreground/10 pt-10">
           <StatItem end={15} suffix="K" label="TV units per month peak capacity" />
           <StatItem end={350} suffix="+" label="Professionals across all locations" />
           <StatItem end={100} suffix="%" label="Solar power generation at Ahmedabad" />
           <StatItem end={66} suffix="Cr" label="Revenue in FY25 — 41.7× growth YoY" />
-        </div>
+        </div> */}
       </div>
     </section>
   );

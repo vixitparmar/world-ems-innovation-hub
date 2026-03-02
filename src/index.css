@@ -72,6 +72,10 @@
     @apply bg-background text-foreground;
     font-family: 'Chivo', sans-serif;
   }
+
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
 }
 
 /* Eyebrow label style */
@@ -81,8 +85,13 @@
 
 /* Yellow rule draw animation */
 @keyframes draw-line {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
 }
 
 .yellow-rule {
@@ -92,8 +101,17 @@
 
 /* Pulsing dot */
 @keyframes pulse-dot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.6); opacity: 0.4; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.6);
+    opacity: 0.4;
+  }
 }
 
 .pulse-dot {
@@ -102,8 +120,13 @@
 
 /* Marquee */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -116,8 +139,15 @@
 
 /* Count up animation helper */
 @keyframes count-fade {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Nav link underline */

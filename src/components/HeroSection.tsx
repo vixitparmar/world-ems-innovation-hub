@@ -9,7 +9,7 @@ const categories = [
   { icon: '📺', name: 'Smart Displays', subtitle: 'TV · IFPD · Digital Signage', tag: 'Core Business' },
   { icon: '🤖', name: 'AI Robotics', subtitle: 'Industrial · Medical · Cleaning', tag: 'Future Tech' },
   { icon: '🔊', name: 'Smart Audio', subtitle: 'Consumer & Commercial Systems', tag: 'Consumer' },
-  { icon: '⚡', name: 'New Energy Systems', subtitle: 'EV · Charging Infra · Battery', tag: 'Upcoming' },
+  { icon: '⚡', name: 'Next Gen Electronics Systems', subtitle: 'EV · Charging Infra · Battery', tag: 'Upcoming' },
 ];
 
 const certs = ['ISO 9001', 'ISO 14001', 'ISO 45001', 'ISO 50001', 'BIS', 'BEE'];
@@ -21,16 +21,16 @@ export default function HeroSection() {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
 
   return (
-    <section className="min-h-screen pt-[68px]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-[calc(100vh-68px)]">
+    <section className="min-h-screen pt-[65px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* LEFT COLUMN — White */}
         <div className="bg-card flex flex-col justify-between p-8 md:p-12 lg:p-14 overflow-y-auto">
           <div>
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 bg-accent/15 rounded-full px-4 py-1.5 mb-8">
+            {/* <div className="inline-flex items-center gap-2 bg-accent/15 rounded-full px-4 py-1.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-accent pulse-dot" />
               <span className="eyebrow text-blue-deep text-[11px]">🇮🇳 India's Next-Gen EMS Partner</span>
-            </div>
+            </div> */}
 
             {/* Headline */}
             <h1 className="font-chivo font-black text-[36px] md:text-[48px] lg:text-[52px] leading-[1.1] tracking-[-1.5px] text-blue-deep mb-6">
@@ -52,7 +52,7 @@ export default function HeroSection() {
             {/* Buttons */}
             <div className="flex flex-wrap gap-3 mb-10">
               <a
-                href="#capabilities"
+                href="#about"
                 className="bg-accent text-blue-deep font-chivo font-bold text-sm px-6 py-3 rounded-lg hover:-translate-y-0.5 hover:shadow-[0_4px_24px_hsl(var(--yellow)/0.4)] transition-all"
               >
                 Explore Capabilities
