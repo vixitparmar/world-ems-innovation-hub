@@ -39,7 +39,7 @@ export default function CertificationsSection() {
       <div className="max-w-7xl mx-auto px-6">
         <span className="reveal eyebrow text-blue-mid mb-3 block">Accreditations</span>
         <h2 className="reveal font-chivo font-black text-3xl md:text-5xl text-blue-deep tracking-tight mb-12">
-          Certified to the highest standards.
+          Compliance Without Compromise
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

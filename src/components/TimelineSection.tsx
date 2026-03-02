@@ -1,12 +1,12 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const milestones = [
-  { year: 'Acquisition', title: 'Acquired Abaj Techpark', desc: 'Expands manufacturing base and production capacity' },
-  { year: 'Founding', title: 'ODM of LED TVs', desc: 'Own design manufacturing begins with LED TV production' },
+  { year: 'Commencement', title: 'Initiated operations at World EMS Techpark', desc: '' },
+  { year: 'LED TVs', title: 'ODM of LED TVs', desc: 'Own design manufacturing begins with LED TV production' },
   { year: 'Robotics', title: 'JDM with Kody', desc: 'Joint Design Manufacturing partnership in robotics' },
   { year: 'Expansion', title: 'Signed BTA with METEC', desc: 'Digital Signage & IFPD categories added to portfolio' },
   { year: 'Partnerships', title: 'Hyundai + Schneider Consumer', desc: '15+ regional brands onboarded, strategic partnerships' },
-  { year: 'Today', title: 'Medical Robotics added', desc: '₹66Cr revenue, expanding to 365K sq. ft. manufacturing' },
+  { year: 'Today', title: 'Medical Robotics added', desc: 'Expanding to 365K sq. ft. manufacturing footprint' },
 ];
 
 export default function TimelineSection() {
@@ -17,7 +17,7 @@ export default function TimelineSection() {
       <div className="max-w-7xl mx-auto px-6">
         <span className="reveal eyebrow text-blue-mid mb-3 block">Our Journey</span>
         <h2 className="reveal font-chivo font-black text-3xl md:text-5xl text-blue-deep tracking-tight mb-16">
-          From LED TVs to the future of manufacturing.
+          The Journey from Product to Platform
         </h2>
 
         {/* Horizontal timeline */}

@@ -4,17 +4,17 @@ const strengths = [
   {
     num: '01',
     title: 'Scalable Manufacturing Platform',
-    body: '45,000 sq. ft. campus with 3× scale-up underway. Peak 15K TVs/month, targeting 150K Smart TVs by FY27.',
+    body: 'Our manufacturing platform integrates disciplined workflows, scalable capacity, and embedded quality checkpoints to deliver consistent output.',
   },
   {
     num: '02',
-    title: 'Design-Led OEM / ODM Model',
-    body: 'ODM from concept to completion. JDM partnerships with global tech firms. Supports up to 115″ displays.',
+    title: 'Design Led Model',
+    body: 'From concept validation to full- scale manufacturing, we support OEM, ODM, and JDM partnerships with global technology collaborators.',
   },
   {
     num: '03',
-    title: 'End-to-End Manufacturing',
-    body: 'Concept → Design → Engineering → Production → Testing → Packaging → Reverse Logistics + repair/refurbishment.',
+    title: 'Complete lifecycle execution',
+    body: 'Concept → Design → Engineering → Production → Testing → Packaging → Reverse Logistics + Repair/ Refurbishment → After Sales Support',
   },
   {
     num: '04',
@@ -24,12 +24,12 @@ const strengths = [
   {
     num: '05',
     title: 'Multi-Vertical Capability',
-    body: 'Smart Displays, AI Robotics, Smart Audio, New Energy — future-ready manufacturing across verticals.',
+    body: 'A diversified manufacturing platform supporting multiple technology verticals; enabling scalable expansion, engineering depth, and operational efficiency under one ecosystem.',
   },
   {
     num: '06',
     title: 'Strong Execution Engine',
-    body: '100+ professionals, ERP governance, robotic automation roadmap — built for reliability at scale.',
+    body: 'Built on structured systems and strong team accountability, our execution engine delivers steady, reliable performance, even under scale.',
   },
 ];
 

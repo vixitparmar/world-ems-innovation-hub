@@ -34,19 +34,15 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1 className="font-chivo font-black text-[36px] md:text-[48px] lg:text-[52px] leading-[1.1] tracking-[-1.5px] text-blue-deep mb-6">
-              Your Partner in Next-Gen
-              <span className="block mt-1">
-                <span className="yellow-rule inline-block w-16 mr-3 align-middle" />
-                Electronics
-              </span>
+              Built to Scale
               <span className="block font-light italic text-blue-mid mt-1">
-                Brand Building Journey.
+                Engineered to Perform.
               </span>
             </h1>
 
             {/* Body */}
             <p className="font-chivo font-light text-[15px] leading-[1.75] text-grey-400 max-w-md mb-8">
-              From Smart Displays to AI Robots — design-led OEM/ODM manufacturing for the world's boldest electronics brands, built in India.
+              Precision-led manufacturing across consumer electronics, EVs, and advanced automation built for scale with reliability.
             </p>
 
             {/* Buttons */}
@@ -58,7 +54,7 @@ export default function HeroSection() {
                 Explore Capabilities
               </a>
               <a
-                href="#products"
+                href="/products"
                 className="border border-grey-200 text-blue-deep font-chivo font-bold text-sm px-6 py-3 rounded-lg hover:border-blue-mid hover:text-blue-mid transition-all"
               >
                 View Product Portfolio
@@ -107,7 +103,7 @@ export default function HeroSection() {
             {/* Top — spans both cols */}
             <div className="col-span-2 overflow-hidden group">
               <img
-                src={heroFactory}
+                src={'./Home_Page_Images/Factory.png'}
                 alt="World EMS manufacturing facility"
                 className="w-full h-full object-cover brightness-[0.82] group-hover:brightness-100 group-hover:scale-[1.07] transition-all duration-[600ms]"
                 loading="eager"
@@ -116,7 +112,7 @@ export default function HeroSection() {
             {/* Bottom-left */}
             <div className="overflow-hidden group">
               <img
-                src={productRobotics}
+                src={'./Home_Page_Images/robots.png'}
                 alt="Industrial robot arm"
                 className="w-full h-full object-cover brightness-[0.82] group-hover:brightness-100 group-hover:scale-[1.07] transition-all duration-[600ms]"
                 loading="eager"
@@ -125,7 +121,7 @@ export default function HeroSection() {
             {/* Bottom-right */}
             <div className="overflow-hidden group">
               <img
-                src={productDisplay}
+                src={'./Home_Page_Images/tv.png'}
                 alt="Smart TV display product"
                 className="w-full h-full object-cover brightness-[0.82] group-hover:brightness-100 group-hover:scale-[1.07] transition-all duration-[600ms]"
                 loading="eager"

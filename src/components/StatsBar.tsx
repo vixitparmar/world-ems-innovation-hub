@@ -17,7 +17,7 @@ const StatsBar = () => (
                     {stats.map((stat, i) => (
                         <div key={i} className="text-center group">
                             <stat.icon className="w-8 h-8 text-accent mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                            <div className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-1">
+                            <div className="font-heading text-3xl md:text-3xl font-bold text-primary-foreground mb-1">
                                 <CountUp end={stat.value} suffix={stat.suffix} />
                             </div>
                             <p className="text-sm text-primary-foreground/60">{stat.label}</p>

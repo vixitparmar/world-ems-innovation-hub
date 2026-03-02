@@ -1,16 +1,8 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import leader1 from '@/assets/leader-1.jpg';
-import leader2 from '@/assets/leader-2.jpg';
-import leader3 from '@/assets/leader-3.jpg';
-import leader4 from '@/assets/leader-4.jpg';
-import leader5 from '@/assets/leader-5.jpg';
-import leader6 from '@/assets/leader-6.jpg';
-import leader7 from '@/assets/leader-7.jpg';
-import leader8 from '@/assets/leader-7.jpg';
 
 const topRow = [
-  { img: './WEMS_Site_Images/Team_Images/niravpatel.png', name: 'Ravi Patel', role: 'Board Member & Director' },
-  { img: './WEMS_Site_Images/Team_Images/ravipatel.png', name: 'Nirav Patel', role: 'Board Member' },
+  { img: './WEMS_Site_Images/Team_Images/ravipatel.png', name: 'Ravi Patel', role: 'Board Member & Director' },
+  { img: './WEMS_Site_Images/Team_Images/niravpatel.png', name: 'Nirav Patel', role: 'Board Member' },
   { img: './WEMS_Site_Images/Team_Images/ketanpatel.png', name: 'Ketan Patel', role: 'Board Member' },
 ];
 

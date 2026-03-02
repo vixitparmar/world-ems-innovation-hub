@@ -16,7 +16,7 @@ interface ProductCardProps {
 
 function ProductCard({ image, tag, title, subtitle, tall }: ProductCardProps) {
   return (
-    <div className={`reveal relative overflow-hidden rounded-xl group cursor-pointer ${tall ? 'row-span-2 min-h-[400px] md:min-h-[520px]' : 'min-h-[260px]'}`}>
+    <div className={`reveal relative overflow-hidden rounded-xl group cursor-pointer ${tall ? 'row-span-2 min-h-[400px] md:min-h-[520px]' : 'min-h-[350px]'}`}>
       <img
         src={image}
         alt={title}
@@ -47,13 +47,13 @@ export default function ProductsSection() {
         <div className="max-w-7xl mx-auto px-6">
           <span className="reveal eyebrow text-blue-mid mb-3 block">What We Make</span>
           <h2 className="reveal font-chivo font-black text-3xl md:text-5xl text-blue-deep tracking-tight mb-12">
-            Products built for what's next.
+            Built Across Verticals
           </h2>
 
           {/* Primary Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[3px] mb-[3px]">
             <ProductCard
-              image={productDisplay}
+              image={'./Home_Page_Images/tv.png'}
               tag="Core Business"
               title="Smart Displays"
               subtitle="LED & Smart TVs from 32″ to 115″ — ODM design to delivery"
@@ -61,7 +61,7 @@ export default function ProductsSection() {
             />
             <div className="grid grid-rows-2 gap-[3px]">
               <ProductCard
-                image={productRobotics}
+                image={'./Home_Page_Images/airobotics.png'}
                 tag="Future Tech"
                 title="AI Robotics"
                 subtitle="Service robots, medical robotics & industrial automation"
@@ -98,18 +98,18 @@ export default function ProductsSection() {
             <div className="text-center mb-16">
               <span className="text-sm font-semibold text-[#007fff] font-chivo tracking-widest uppercase">Industry Context</span>
               <h2 className="font-chivo text-3xl md:text-4xl font-bold text-foreground mt-3">
-                Why EMS, Why Now
+                What We Stand On
               </h2>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                Three powerful macro trends are converging to create an unprecedented opportunity for Indian EMS companies.
+                Three core principles that define how we operate, scale, and deliver.
               </p>
             </div>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
-              { num: "01", title: "Global Brand Shift", desc: "Global brands are moving away from manufacturing to concentrate on R&D and branding — creating massive outsourcing demand." },
-              { num: "02", title: "Make in India Thrust", desc: "Government push through PLI Scheme and favourable duty structures is driving domestic manufacturing at scale." },
-              { num: "03", title: "Capital-Light Advantage", desc: "Nimble, capital-light EMS companies with swift execution capabilities are best positioned to capture this wave." },
+              { num: "01", title: "Design-Led OEM / ODM", desc: "End-to-end product development capability from concept and engineering to production readiness. Enables brands to innovate while leveraging manufacturing precision." },
+              { num: "02", title: "Scalable Stability", desc: "Our infrastructure, supply chain integration, and production planning are designed to support high-volume manufacturing without compromising consistency. As demand scales, performance remains steady; because stability is engineered into our foundation." },
+              { num: "03", title: "From Build to Beyond", desc: "Comprehensive lifecycle management including testing & validation, packaging, reverse logistics, repair, and refurbishment, extending value beyond production." },
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="p-8 bg-card rounded-lg shadow-card h-full border border-border/50 hover:shadow-card-hover transition-all duration-300">
